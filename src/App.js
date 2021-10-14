@@ -22,18 +22,23 @@ function App() {
           </h1>
         </Container>
       </div>
-      <Container className="flex flex-col gap-1 ">
+      <Container className="flex flex-col gap-1 mb-2">
         <h2 className="mb-2 mt-4">List of posts</h2>
-        {posts.map((post) => (
-          <div className="   hover:bg-gray-100 cursor-pointer" key={post.id}>
-            <p>
-              <span className="bg-gray-300 bg-opacity-50 px-1 font-light">
-                {post.id}
-              </span>{" "}
-              {post.title}
-            </p>
-          </div>
-        ))}
+        {posts.length == 0
+          ? "Loading..."
+          : posts.map((post) => (
+              <div
+                className="   hover:bg-gray-100 cursor-pointer"
+                key={post.id}
+              >
+                <p>
+                  <span className="bg-gray-300 bg-opacity-50 px-1 font-light">
+                    {post.id}
+                  </span>{" "}
+                  {post.title}
+                </p>
+              </div>
+            ))}
       </Container>
     </>
   );
