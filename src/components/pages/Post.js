@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import useAxios from "../../hooks/useAxios";
-import Container from "../Container";
 import PostDetails from "../PostDetails";
 
 function Post({ user_id, post_id }) {
@@ -11,12 +9,12 @@ function Post({ user_id, post_id }) {
     `https://jsonplaceholder.typicode.com/users/${user_id}`
   );
   return (
-    <Container>
-      <h2 className="mb-2 mt-4 text-xl font-light">
-        <a className="" href="/">Go back</a>
+    <div className="container">
+      <h2 className="mb-2 mt-4 ">
+        <a className="btn-link" href="/">Go back</a>
       </h2>
       <PostDetails {...user} {...post}/>
-    </Container>
+    </div>
   );
 }
 

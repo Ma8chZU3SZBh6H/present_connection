@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAxios from "../../hooks/useAxios";
-import Container from "../Container";
 import PostDetails from "../PostDetails";
 
 function PostAdd({ user_id, post_id }) {
@@ -18,7 +17,7 @@ function PostAdd({ user_id, post_id }) {
         setSubmitted(true);
     };
   return (
-    <Container>
+    <div className="container">
       <h2 className="mb-2 mt-4 text-xl font-light">
         <a  href="/">Go back</a>
       </h2>
@@ -45,7 +44,7 @@ function PostAdd({ user_id, post_id }) {
             </div>
         </form>}
       </div>
-    </Container>
+    </div>
   );
 }
 

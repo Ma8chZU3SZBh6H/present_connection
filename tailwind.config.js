@@ -6,6 +6,9 @@ module.exports = {
       gridTemplateColumns: {
         "auto-fr": "auto 1fr",
       },
+      backgroundImage: {
+        'autumn-pattern': "url('/src/img/autumn.svg')",
+       }
     },
   },
   variants: {
