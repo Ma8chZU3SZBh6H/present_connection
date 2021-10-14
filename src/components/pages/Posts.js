@@ -1,9 +1,10 @@
 
 import { useEffect } from "react";
 import useAxios from "../../hooks/useAxios";
+import Pages from "../Pagination";
 
-function Home() {
-  const [posts, getPosts] = useAxios("https://jsonplaceholder.typicode.com/posts");
+function Home({page = 0}) {
+  const [posts, getPosts] = useAxios(`https://jsonplaceholder.typicode.com/posts?_start=${page*10}&_limit=10`);
   useEffect(()=>{
     console.log(posts);
   }, [posts]);
@@ -13,11 +14,11 @@ function Home() {
       <h2 className="title">List of posts</h2>
       <a className="btn-link" href="/post/new">Create new post</a>
       </div>
-      <div className="flex flex-col gap-1 mb-2 ">
+      <div className="flex flex-col gap-1 mb-4 ">
         {posts.length == 0
           ? "Loading..."
           : posts.map((post) => (
-              <div className="   hover:bg-gray-100 font-light" key={post.id}>
+              <div className="hover:bg-gray-100 font-light" key={post.id}>
                 <a href={`/post/${post.userId}/${post.id}`}>
                   <span className="bg-gray-300 bg-opacity-50 px-1 ">
                     {post.id}
@@ -27,6 +28,7 @@ function Home() {
               </div>
             ))}
       </div>
+      <Pages page={page}/>
     </div>
   );
 }

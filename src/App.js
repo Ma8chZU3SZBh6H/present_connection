@@ -14,6 +14,9 @@ function App() {
         <Route path="/">
           <Posts />
         </Route>
+        <Route path="/page/:page">
+          {(params) => <Posts {...params} />}
+        </Route>
         <Route path="/post/:user_id/:post_id">
           {(params) => <Post {...params} />}
         </Route>

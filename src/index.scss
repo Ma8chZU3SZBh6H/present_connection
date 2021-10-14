@@ -12,6 +12,15 @@
   .btn-link {
     @apply text-blue-700 cursor-pointer title;
   }
+  .btn-page {
+    @apply px-2 rounded font-bold;
+  }
+  .btn-page-selected {
+    @apply text-white bg-blue-600 btn-page;
+  }
+  .btn-page-unselected {
+    @apply text-blue-600 border-2 border-blue-600 btn-page;
+  }
 }
 
 // $bg: rgb(60, 0, 0);
