@@ -6,7 +6,7 @@ function Pages({ page }) {
       {Array(10)
         .fill(0)
         .map((value, index) => (
-          <div>
+          <div key={index}>
             <Link
               to={`/page/${index}`}
               className={`${

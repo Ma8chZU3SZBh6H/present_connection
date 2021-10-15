@@ -1,6 +1,7 @@
 import useAxios from "../../hooks/useAxios";
 import PostDetails from "../PostDetails";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 function Post() {
   const { user_id, post_id } = useParams();
@@ -13,9 +14,9 @@ function Post() {
   return (
     <div className="container">
       <h2 className="mb-2 mt-4 ">
-        <a className="btn-link" href="/">
+        <Link className="btn-link" to="/">
           Go back
-        </a>
+        </Link>
       </h2>
       <PostDetails {...user} {...post} />
     </div>

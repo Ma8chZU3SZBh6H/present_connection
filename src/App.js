@@ -12,14 +12,13 @@ import PostAdd from "./components/pages/PostAdd";
 import PostPreview from "./components/pages/PostPreview";
 
 function App() {
+  console.log(process.env.homepage);
   return (
     <BrowserRouter>
       <div>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Posts />
-          </Route>
+          <Route exact path="/" component={Posts} />
           <Route exact path="/page/:page" component={Posts} />
           <Route exact path="/post/:user_id/:post_id" component={Post} />
           <Route exact path="/post/new" component={PostAdd} />

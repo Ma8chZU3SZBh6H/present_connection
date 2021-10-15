@@ -1,4 +1,5 @@
 import logo from "../img/CONNECT_LOGO.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,7 +8,7 @@ function Navbar() {
         <div className="flex gap-3 ">
           <img src={logo} alt="" className="w-10" />
           <h1 className="font-normal text-2xl  md:text-left ">
-            <a href="/">Present Connection</a>
+            <Link to="/">Present Connection</Link>
           </h1>
         </div>
       </div>
