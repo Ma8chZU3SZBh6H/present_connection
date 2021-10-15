@@ -18,7 +18,7 @@ function PostAdd({ user_id, post_id }) {
     };
   return (
     <div className="container">
-      <h2 className="mb-2 mt-4 text-xl font-light">
+      <h2 className="mb-2 mt-4 btn-link">
         <a  href="/">Go back</a>
       </h2>
       <div >
@@ -39,7 +39,7 @@ function PostAdd({ user_id, post_id }) {
             </div>
             <div className="flex flex-col">
                 <div>
-                    <input className="py-1 px-2 bg-red-500 text-white rounded cursor-pointer" type="submit" value="Post" />
+                    <input className="py-1 px-4 bg-blue-600 font-bold text-white rounded cursor-pointer" type="submit" value="Post" />
                     </div>
             </div>
         </form>}

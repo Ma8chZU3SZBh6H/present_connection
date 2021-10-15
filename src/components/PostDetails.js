@@ -1,12 +1,24 @@
-function PostDetails({name, title, body}) {
-    return <div className="grid grid-cols-auto-fr gap-1 mt-4 ">
-    <div className="bg-gray-100  px-1 ">Posted by</div>{" "}
-    <div className="font-light">{name ?? "Loading..."}</div>
-    <div className="bg-gray-100 px-1 ">TITLE</div>{" "}
-    <div className="font-light">{title ?? "Loading..."}</div>
-    <div className="bg-gray-100 px-1 ">BODY</div>{" "}
-    <div className="font-light">{body ?? "Loading..."}</div>
-    </div>
+function PostDetails({ name, title, body }) {
+  return (
+    <table className="font-light border-collapse">
+      <tr>
+        <th className="w-24"></th>
+        <th></th>
+      </tr>
+      <tr className="border-t-2 border-b-2">
+        <td>Posted by </td>
+        <td>{name ?? "Loading..."}</td>
+      </tr>
+      <tr className="border-t-2 border-b-2">
+        <td>Title </td>
+        <td>{title ?? "Loading..."}</td>
+      </tr>
+      <tr className="border-t-2 border-b-2">
+        <td>Post </td>
+        <td>{body ?? "Loading..."}</td>
+      </tr>
+    </table>
+  );
 }
 
 export default PostDetails;
