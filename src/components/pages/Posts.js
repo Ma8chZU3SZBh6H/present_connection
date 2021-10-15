@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import useAxios from "../../hooks/useAxios";
 import Pages from "../Pagination";
+import { useParams } from "react-router";
 
-function Home({ page = 0 }) {
-  const [posts, getPosts] = useAxios(
-    `https://jsonplaceholder.typicode.com/posts?_start=${page * 10}&_limit=10`
-  );
+function Home() {
+  const { page = 0 } = useParams();
+  const [posts, getPosts] = useAxios();
   useEffect(() => {
-    console.log(posts);
-  }, [posts]);
+    getPosts(
+      `https://jsonplaceholder.typicode.com/posts?_start=${page * 10}&_limit=10`
+    );
+  }, [page]);
   return (
     <div className="container">
       <div className="mb-2 mt-4 flex md:flex-row flex-col justify-between">
